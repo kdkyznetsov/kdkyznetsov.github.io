@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Проверка ФИО</title>
+	<style type="text/css">
+		body:first-letter {
+				text-transform: uppercase;
+		}
+		</style>
+		
+</head>
+<body>
+	<script>
+
+		var str1 = prompt('Введите: Фамилия Имя Отчество полностью!', str1);
+
+		fio (str1);
+
+		function fio (str1){
+
+			var arr1 = str1.split(' ');
+
+			if (arr1.length !== 3){
+				document.write("Не правильный ввод данных. Должно быть 3 значения через пробел.");
+				return false;
+			}
+
+			for (var prop in arr1) {
+				
+				if(!isNaN(parseInt(arr1[prop], 10))){
+					document.write("Не верный формат ввода. Цифровые значения.");
+					return false
+				}  
+			}
+		
+			var str2 = arr1[0] + ' ' + arr1[1][0].toUpperCase() + '. ' + arr1[2][0].toUpperCase() + '.';
+			document.write(str2);
+			return true;
+
+		}
+		
+	</script>
+</body>
+</html>
